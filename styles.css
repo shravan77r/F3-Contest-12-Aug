@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #242A32;
+}
+
+.heading h2 {
+    font-family: Montserrat;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 68px;
+    letter-spacing: 0em;
+    text-align: center;
+
+    text-shadow:
+        -1px -1px 0 rgba(2, 150, 229, 1),
+        1px -1px 0 rgba(2, 150, 229, 1),
+        -1px 1px 0 rgba(2, 150, 229, 1),
+        1px 1px 0 rgba(2, 150, 229, 1);
+
+}
+
+.search-container input,
+.search-container span {
+    font-family: Poppins;
+    color: rgba(103, 104, 109, 1);
+    border: none;
+    background: rgba(58, 63, 71, 1);
+}
+
+.search-container input:focus {
+    background: rgb(45, 63, 92);
+}
+
+#cards-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: transparent;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#movie-title {
+    font-size: 13px;
+    margin: 10px 0;
+    color: white;
+    text-align: right;
+    font-weight: 600;
+}
+
+#movie-sequence {
+    position: relative;
+    bottom: 105px;
+    left: -10px;
+    font-family: Montserrat;
+    font-size: 74px;
+    font-weight: lighter;
+    text-align: left;
+    opacity: 0.5;
+    text-shadow: -1px -1px 0 rgba(2, 150, 229, 1),
+        1px -1px 0 rgba(2, 150, 229, 1),
+        -1px 1px 0 rgba(2, 150, 229, 1),
+        1px 1px 0 rgba(2, 150, 229, 1);
+}
+
+.btnsearch:hover {
+    cursor: pointer;
+}
+
+#loader-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.loader {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    opacity: 100;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .heading h2 {
+        font-size: 3 4px;
+    }
+
+    #cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .heading h2 {
+        font-size: 24px;
+    }
+
+    #cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
